@@ -1,7 +1,9 @@
 package com.diveedilab.petchallenge.model;
 
+import com.diveedilab.petchallenge.enums.Treatment;
 import jakarta.persistence.*;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -10,6 +12,9 @@ public class Diagnosis {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
+    private Date date;
+    @Enumerated(EnumType.STRING)
+    private Treatment treatment;
     @ManyToOne
     private Pet pet;
 
@@ -35,5 +40,21 @@ public class Diagnosis {
 
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Treatment getTreatment() {
+        return treatment;
+    }
+
+    public void setTreatment(Treatment treatment) {
+        this.treatment = treatment;
     }
 }

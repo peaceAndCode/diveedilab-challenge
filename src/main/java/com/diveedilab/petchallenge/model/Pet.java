@@ -14,6 +14,8 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
+    private int age;
+    private String breed;
     @OneToMany(mappedBy = "pet")
     private List<Diagnosis> diagnosis = new ArrayList<>(0);
 
@@ -39,5 +41,21 @@ public class Pet {
 
     public void setDiagnosis(List<Diagnosis> diagnoses) {
         this.diagnosis = diagnoses;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 }
