@@ -1,0 +1,239 @@
+{
+  "snapshot": {
+    "created": "2024-04-04T09:35:59.513",
+    "database": {
+      "productVersion": "2022.3.2",
+      "shortName": "intellijPsiClass",
+      "majorVersion": "0",
+      "minorVersion": "0",
+      "user": "danieleravaglia",
+      "productName": "JPA Buddy Intellij",
+      "url": "jpab?generationContext=4d8f79e7-cf4c-448e-bd73-d2e4e9ac825b"
+    },
+    "metadata": {
+      "generationContext": {
+        "dbmsType": "h2"
+      }
+    },
+    "objects": {
+      "liquibase.structure.core.Catalog": [
+        {
+          "catalog": {
+            "default": true,
+            "name": "JPA_BUDDY",
+            "snapshotId": "5a68100"
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.Column": [
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "id",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#5a68102",
+            "snapshotId": "5a68104",
+            "type": {
+              "typeName": "UUID"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "id",
+            "nullable": false,
+            "relation": "liquibase.structure.core.Table#5a68109",
+            "snapshotId": "5a68108",
+            "type": {
+              "typeName": "UUID"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "name",
+            "nullable": true,
+            "relation": "liquibase.structure.core.Table#5a68102",
+            "snapshotId": "5a68105",
+            "type": {
+              "columnSize": "255!{java.lang.Integer}",
+              "typeName": "VARCHAR"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "name",
+            "nullable": true,
+            "relation": "liquibase.structure.core.Table#5a68109",
+            "snapshotId": "5a68111",
+            "type": {
+              "columnSize": "255!{java.lang.Integer}",
+              "typeName": "VARCHAR"
+            }
+          }
+        },
+        {
+          "column": {
+            "certainDataType": false,
+            "name": "pet_id",
+            "nullable": true,
+            "relation": "liquibase.structure.core.Table#5a68102",
+            "snapshotId": "5a68106",
+            "type": {
+              "typeName": "UUID"
+            }
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.ForeignKey": [
+        {
+          "foreignKey": {
+            "foreignKeyColumns": [
+              "liquibase.structure.core.Column#5a68106"
+            ]
+            ,
+            "foreignKeyTable": "liquibase.structure.core.Table#5a68102",
+            "name": "FK_DIAGNOSIS_ON_PET",
+            "primaryKeyColumns": [
+              "liquibase.structure.core.Column#5a68108"
+            ]
+            ,
+            "primaryKeyTable": "liquibase.structure.core.Table#5a68109",
+            "snapshotId": "5a68107"
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.Index": [
+        {
+          "index": {
+            "columns": [
+              "liquibase.structure.core.Column#5a68104"
+            ]
+            ,
+            "name": "IX_pk_diagnosis",
+            "snapshotId": "5a68103",
+            "table": "liquibase.structure.core.Table#5a68102",
+            "unique": true
+          }
+        },
+        {
+          "index": {
+            "columns": [
+              "liquibase.structure.core.Column#5a68108"
+            ]
+            ,
+            "name": "IX_pk_pet",
+            "snapshotId": "5a68110",
+            "table": "liquibase.structure.core.Table#5a68109",
+            "unique": true
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.PrimaryKey": [
+        {
+          "primaryKey": {
+            "backingIndex": "liquibase.structure.core.Index#5a68103",
+            "columns": [
+              "liquibase.structure.core.Column#5a68104"
+            ]
+            ,
+            "name": "pk_diagnosis",
+            "snapshotId": "5a68113",
+            "table": "liquibase.structure.core.Table#5a68102"
+          }
+        },
+        {
+          "primaryKey": {
+            "backingIndex": "liquibase.structure.core.Index#5a68110",
+            "columns": [
+              "liquibase.structure.core.Column#5a68108"
+            ]
+            ,
+            "name": "pk_pet",
+            "snapshotId": "5a68112",
+            "table": "liquibase.structure.core.Table#5a68109"
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.Schema": [
+        {
+          "schema": {
+            "catalog": "liquibase.structure.core.Catalog#5a68100",
+            "default": true,
+            "name": "PUBLIC",
+            "snapshotId": "5a68101"
+          }
+        }
+      ]
+      ,
+      "liquibase.structure.core.Table": [
+        {
+          "table": {
+            "columns": [
+              "liquibase.structure.core.Column#5a68104",
+              "liquibase.structure.core.Column#5a68105",
+              "liquibase.structure.core.Column#5a68106"
+            ]
+            ,
+            "indexes": [
+              "liquibase.structure.core.Index#5a68103"
+            ]
+            ,
+            "name": "diagnosis",
+            "outgoingForeignKeys": [
+              "liquibase.structure.core.ForeignKey#5a68107"
+            ]
+            ,
+            "primaryKey": "liquibase.structure.core.PrimaryKey#5a68113",
+            "schema": "liquibase.structure.core.Schema#5a68101",
+            "snapshotId": "5a68102"
+          }
+        },
+        {
+          "table": {
+            "columns": [
+              "liquibase.structure.core.Column#5a68108",
+              "liquibase.structure.core.Column#5a68111"
+            ]
+            ,
+            "indexes": [
+              "liquibase.structure.core.Index#5a68110"
+            ]
+            ,
+            "name": "pet",
+            "primaryKey": "liquibase.structure.core.PrimaryKey#5a68112",
+            "schema": "liquibase.structure.core.Schema#5a68101",
+            "snapshotId": "5a68109"
+          }
+        }
+      ]
+      
+    },
+    "snapshotControl": {
+      "snapshotControl": {
+        "includedType": [
+          "liquibase.structure.core.Catalog",
+          "liquibase.structure.core.Column",
+          "liquibase.structure.core.ForeignKey",
+          "liquibase.structure.core.Index",
+          "liquibase.structure.core.PrimaryKey",
+          "liquibase.structure.core.Schema",
+          "liquibase.structure.core.Sequence",
+          "liquibase.structure.core.Table",
+          "liquibase.structure.core.UniqueConstraint",
+          "liquibase.structure.core.View"
+        ]
+        
+      }
+    }
+  }
+}

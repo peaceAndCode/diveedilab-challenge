@@ -1,0 +1,2 @@
+INSERT INTO PET (id, name) VALUES ('32abc7d6-222f-4ef3-b30a-b2dbeac8bfb1', 'pluto');
+INSERT INTO DIAGNOSIS (id, name, pet_id) VALUES ('068a22d5-a173-4527-a322-e08f7add0cdd', 'febbre','32abc7d6-222f-4ef3-b30a-b2dbeac8bfb1');
