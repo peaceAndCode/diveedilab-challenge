@@ -6,7 +6,6 @@ public class PetDTO {
     private UUID id;
     private String name;
     private String breed;
-    private int age;
 
     public UUID getId() {
         return id;
@@ -32,11 +31,4 @@ public class PetDTO {
         this.breed = breed;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }

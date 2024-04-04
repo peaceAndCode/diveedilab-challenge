@@ -27,8 +27,12 @@ public class PetService {
     }
 
     public List<DiagnosisDTO> getDiagnosisByPetId(UUID id) {
-        Pet pet = petRepository.findById(id).orElseThrow();
-        return pet.getDiagnosis()
+        List<Pet> pets = petRepository.findAll();
+        return pets.stream()
+                .filter(p -> p.getId().equals(id))
+                .findFirst()
+                .orElseThrow()
+                .getDiagnosis()
                 .stream()
                 .map(d -> DiagnosisMapper.INSTANCE.diagnosisToDiagnosisDTO(d))
                 .collect(Collectors.toList());
