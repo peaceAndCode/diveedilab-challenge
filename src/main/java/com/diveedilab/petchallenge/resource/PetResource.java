@@ -22,6 +22,9 @@ public class PetResource {
         petService = petService1;
     }
 
+    @GetMapping("/pets")
+    public List<PetDTO> getPets(){return petService.getPetsList();}
+
     @GetMapping("/{id}")
     public PetDTO getById(@PathVariable UUID id){
         return petService.getPetById(id);

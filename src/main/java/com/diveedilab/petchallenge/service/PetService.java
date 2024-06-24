@@ -21,6 +21,14 @@ public class PetService {
         petRepository = petRepository1;
     }
 
+    public List<PetDTO> getPetsList(){
+        return petRepository
+                .findAll()
+                .stream()
+                .map(PetMapper.INSTANCE::petToPetDTO)
+                .toList();
+    }
+
     public PetDTO getPetById(UUID id){
         Pet pet = petRepository.findById(id).orElseThrow();
         return PetMapper.INSTANCE.petToPetDTO(pet);
