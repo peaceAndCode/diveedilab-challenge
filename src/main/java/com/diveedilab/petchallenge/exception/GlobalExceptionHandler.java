@@ -13,10 +13,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ExceptionResourceNotFound.class)
    public ResponseEntity<ExceptionObj> handleExceptionResourceNotFound(Exception ex, HttpServletRequest request) {
         ExceptionObj exceptionObj = new ExceptionObj();
-        exceptionObj.setStatusCode(HttpStatus.BAD_REQUEST.value());
+        exceptionObj.setStatusCode(HttpStatus.NOT_FOUND.value());
         exceptionObj.setMessage(ex.getMessage());
         exceptionObj.setTimestamp(new Timestamp(System.currentTimeMillis()));
 
-        return new ResponseEntity<>(exceptionObj,HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(exceptionObj,HttpStatus.NOT_FOUND);
    }
 }
