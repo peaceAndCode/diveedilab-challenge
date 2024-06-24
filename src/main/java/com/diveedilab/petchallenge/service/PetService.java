@@ -7,6 +7,7 @@ import com.diveedilab.petchallenge.mapper.DiagnosisMapper;
 import com.diveedilab.petchallenge.mapper.PetMapper;
 import com.diveedilab.petchallenge.model.Pet;
 import com.diveedilab.petchallenge.repository.PetRepository;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class PetService {
                 .toList();
     }
 
+    @Cacheable(value = "user",key = "#id")
     public PetDTO getPetById(UUID id){
         Pet pet = petRepository.findById(id).orElseThrow();
         return PetMapper.INSTANCE.petToPetDTO(pet);
@@ -42,4 +44,5 @@ public class PetService {
                 .map(DiagnosisMapper.INSTANCE::diagnosisToDiagnosisDTO)
                 .toList();
     }
+
 }
